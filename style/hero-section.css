@@ -1,13 +1,19 @@
 #hero {
     background: var(--pink-low);
-    padding-block: 1.25rem 1.91rem;                                 /* 20px  30.5px */
+    background-image: url(../assets/hero-background.png);
+    background-size: auto 464px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
 }
 
 #hero-top {
     max-width: 23.4375rem;                                          /* 375px */
     width: 100%;
-    margin-inline: auto;
+    padding-top: 1.25rem;                                           /* 20px */
     padding-inline: 1.25rem;                                        /* 20px */
+    height: 464px;
 
     & header {
         display: flex;
@@ -66,7 +72,6 @@
         gap: 1rem;                                                  /* 16px */
         width: 100%;
         max-width: 20.9375rem;                                      /* 335px */
-        border: 1px solid yellow;
 
         & h1 {
             font-family: var(--ff-base);
@@ -98,13 +103,21 @@
 @media (min-width: 1200px) {
         #hero {
         background: var(--pink-low);
-        padding:3.5rem 10rem 5.5rem 10rem;                          /* 56px 160px 88px 160px */
+        background-image: url(../assets/hero-background.png);
+        background-size: auto 948px;
+        background-position: top center;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
     }
     
     #hero-top {
        max-width: 90rem;                                            /* 1440px */
        width: 100%;
-       margin-inline: auto;
+       padding-top: 3.5rem;                                         /* 56px */
+       padding-inline: 10rem;                                       /* 160px */
+
+       height: 948px;
 
        & header {
             display: flex;
@@ -118,7 +131,6 @@
         gap: 2rem;                                                  /* 32px */
         width: 100%;
         max-width: 41rem;                                           /* 656px */
-        border: 1px solid yellow;
 
         & h1 {
             font-size: 3rem;                                        /* 48px */
