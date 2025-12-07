@@ -1,12 +1,13 @@
 #hero {
     background: var(--pink-low);
-    padding:1.25rem 1.25rem 1.91rem 1.25rem;                        /* 20px 20px 30.5px 20px */
+    padding-block: 1.25rem 1.91rem;                                 /* 20px  30.5px */
 }
 
 #hero-top {
     max-width: 23.4375rem;                                          /* 375px */
     width: 100%;
     margin-inline: auto;
+    padding-inline: 1.25rem;                                        /* 20px */
 
     & header {
         display: flex;
@@ -54,6 +55,35 @@
         transform: translate(-50%, -50%) scale(1);
         }
     }
+
+    & #hero-title {
+        display: flex;
+        flex-direction: column;
+        margin-inline: auto;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3rem;                                           /* 48px */
+        gap: 1rem;                                                  /* 16px */
+        width: 100%;
+        max-width: 20.9375rem;                                      /* 335px */
+        border: 1px solid yellow;
+
+        & h1 {
+            font-family: var(--ff-base);
+            font-weight: 700;
+            font-size: 1.75rem;                                     /* 28px */
+            color: var(--text-title);
+            text-align: center;
+        }
+
+        & p {
+            font-family: var(--ff-base);
+            font-weight: 400;
+            font-size: .875rem;                                     /* 14px */
+            color: var(--text-title);
+            text-align: center;
+        }
+    }
 }
 
 .mobile-only {
@@ -82,6 +112,22 @@
             justify-content: space-between;
             height: 3.625rem;                                       /* 58px */
        }
+
+       & #hero-title {
+        margin-top: 10.25rem;                                       /* 164px */
+        gap: 2rem;                                                  /* 32px */
+        width: 100%;
+        max-width: 41rem;                                           /* 656px */
+        border: 1px solid yellow;
+
+        & h1 {
+            font-size: 3rem;                                        /* 48px */
+        }
+
+        & p {
+            font-size: 1.25rem;                                     /* 20px */
+        }
+    }
 
     }
 

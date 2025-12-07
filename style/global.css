@@ -26,10 +26,10 @@
     --text-label:#BAC6C9;
     /* -- fontes  -- */
     --ff-base: "Raleway", sans-serif;
-    --title-lg: 700 3rem/auto var(--ff-base);
-    --title-md: 700 2.5rem/auto var(--ff-base);
-    --title-sm: 700 2rem/auto var(--ff-base);
-    --title-xs: 700 1rem/auto var(--ff-base);
+    --title-lg: 700 3rem var(--ff-base);
+    --title-md: 700 2.5rem/ var(--ff-base);
+    --title-sm: 700 2rem var(--ff-base);
+    --title-xs: 700 1rem var(--ff-base);
     --subtitle: 500 2rem/2 var(--ff-base);
     --body-lg: 400 1.25rem/1.4 var(--ff-base);
     --body-md: 400 1rem/1.4 var(--ff-base);
@@ -38,10 +38,6 @@
     --button: 700 .875rem var(--ff-base);
     --link: 500 .875rem var(--ff-base);
     --tag: 700 .625rem var(--ff-base);
-}
-
-h1 {
-    font: var(--title-lg);
 }
 
 a {
