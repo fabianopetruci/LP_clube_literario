@@ -13,7 +13,7 @@
     width: 100%;
     padding-top: 1.25rem;                                           /* 20px */
     padding-inline: 1.25rem;                                        /* 20px */
-    height: 464px;
+    min-height: 464px;
 
     & header {
         display: flex;
@@ -96,7 +96,7 @@
     width: 100%;
     padding-block: 1.90625rem;                                      /* 30.5px */
     padding-inline: 1.25rem;                                        /* 20px */
-    height: 251px;
+    min-height: 251px;
 
     & #hero-content {
         width: 100%;
@@ -169,7 +169,7 @@
     width: 100%;
     padding-top: 3.5rem;                                         /* 56px */
     padding-inline: 10rem;                                       /* 160px */
-    height: 948px;
+    min-height: 948px;
 
         & header {
                 display: flex;
@@ -195,13 +195,11 @@
     }
 
     #hero-bottom {
-        margin-inline: auto;
         max-width: 75rem;                                       /* 1200px */
         width: 100%;
         margin-top: 5.5rem;                                     /* 88px */
-        margin-bottom: 5.5rem;                                  /* 88px */
-        margin-inline: 7.5rem;                                 /* 120px */
-        height: 400px;
+        margin: 5.5rem 7.5rem;                                  /* 88px 120px */
+        min-height: 400px;
 
         & #hero-content {
             row-gap: 1.75rem;                                   /* 28px */
@@ -225,4 +223,55 @@
         display: block;
         width: 230px;
     }
+}
+
+/* ==== ANIMAÇÕES DO HERO ==== */
+
+@keyframes fade-in-soft {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up-soft {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* seção inteira (fundo + ambiente geral) */
+#hero {
+  animation: fade-in-soft 1.2s ease-out both;
+}
+
+/* título e subtítulo */
+#hero-title {
+  animation: fade-in-up-soft 1.4s ease-out 0.4s both;
+}
+
+/* bloco de conteúdo inferior */
+#hero-content {
+  animation: fade-in-up-soft 1.4s ease-out 0.8s both;
+}
+
+/* imagens azuis em sequência */
+#hero-content .mini-images-1 {
+  animation: fade-in-up-soft 1.2s ease-out 1.0s both;
+}
+
+#hero-content h2 {
+  animation: fade-in-up-soft 1.2s ease-out 1.2s both;
+}
+
+#hero-content .mini-images-2,
+#hero-content .mini-images-3 {
+  animation: fade-in-up-soft 1.2s ease-out 1.4s both;
 }
