@@ -1,3 +1,5 @@
+/* ================= HERO (MOBILE FIRST) ================= */
+
 #hero {
     background: var(--pink-low);
     background-image: url(../assets/hero-background.png);
@@ -58,7 +60,7 @@
        }
 
         &:hover span::before {
-        transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
         }
     }
 
@@ -133,13 +135,13 @@
         }
 
         & .mini-images-2 {
-        grid-area: left;
-        justify-self: flex-start;
+            grid-area: left;
+            justify-self: flex-start;
         }
 
         & .mini-images-3 {
-        grid-area: right;
-        justify-self: flex-end;
+            grid-area: right;
+            justify-self: flex-end;
         }
     }
 }
@@ -152,65 +154,73 @@
   display: none;
 }
 
-/* ====  MEDIA QUERIES  ==== */
+/* ================= HERO DESKTOP ================= */
+
 @media (min-width: 1200px) {
     #hero {
-    background: var(--pink-low);
-    background-image: url(../assets/hero-background.png);
-    background-size: auto 948px;
-    background-position: top center;
-    background-repeat: no-repeat;
-    position: relative;
-    overflow: hidden;
+        background: var(--pink-low);
+        background-image: url(../assets/hero-background.png);
+        background-size: auto 948px;
+        background-position: top center;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
+
+        /* >>> CORREÇÃO IMPORTANTE <<< */
+        max-width: 90rem;          /* 1440px */
+        width: 100%;
+        margin-inline: auto;       /* CENTRALIZA O HERO INTEIRO */
     }
 
     #hero-top {
-    max-width: 90rem;                                            /* 1440px */
-    width: 100%;
-    padding-top: 3.5rem;                                         /* 56px */
-    padding-inline: 10rem;                                       /* 160px */
-    min-height: 948px;
+        max-width: 90rem;                                            /* 1440px */
+        width: 100%;
+        padding-top: 3.5rem;                                         /* 56px */
+        padding-inline: 10rem;                                       /* 160px */
+        min-height: 948px;
 
         & header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                height: 3.625rem;                                       /* 58px */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 3.625rem;                                       /* 58px */
         }
 
         & #hero-title {
-            margin-top: 10.25rem;                                       /* 164px */
-            gap: 2rem;                                                  /* 32px */
+            margin-top: 10.25rem;                                   /* 164px */
+            gap: 2rem;                                              /* 32px */
             width: 100%;
-            max-width: 41rem;                                           /* 656px */
+            max-width: 41rem;                                       /* 656px */
 
             & h1 {
-                font-size: 3rem;                                        /* 48px */
+                font-size: 3rem;                                    /* 48px */
             }
 
             & p {
-                font-size: 1.25rem;                                     /* 20px */
+                font-size: 1.25rem;                                 /* 20px */
             }
         }
     }
 
     #hero-bottom {
-        max-width: 75rem;                                       /* 1200px */
+        max-width: 75rem;                                           /* 1200px */
         width: 100%;
-        margin-top: 5.5rem;                                     /* 88px */
-        margin: 5.5rem 7.5rem;                                  /* 88px 120px */
+
+        /* >>> CORREÇÃO IMPORTANTE <<< */
+        margin: 5.5rem auto 0;                                      /* top 88px, centralizado, sem empurrar pra direita */
+
         min-height: 400px;
 
         & #hero-content {
-            row-gap: 1.75rem;                                   /* 28px */
+            row-gap: 1.75rem;                                       /* 28px */
 
             & img {
-                width: 5rem;                                    /* 80px */
-                height: 5rem;                                   /* 80px */
+                width: 5rem;                                        /* 80px */
+                height: 5rem;                                       /* 80px */
             }
 
             & h2 {
-            font: var(--subtitle);
+                font: var(--subtitle);
             }
         }
     }
@@ -225,7 +235,7 @@
     }
 }
 
-/* ==== ANIMAÇÕES DO HERO ==== */
+/* ================= ANIMAÇÕES DO HERO ================= */
 
 @keyframes fade-in-soft {
   from {
