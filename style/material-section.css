@@ -1,0 +1,73 @@
+#material {
+    background: var(--pink-low);
+    max-width: 23.4375rem;                                          /* 375px */
+    width: 100%;
+    min-height: 747px;
+    overflow: hidden;
+}
+
+/* BLOCO DO TÍTULO */
+#material-title {
+    max-width: 19.4375rem;                                          /* 311px */
+    width: 100%;
+    margin-inline: auto;
+    margin-top: 6.5rem;                                             /* 104px */
+    text-align: center;
+}
+
+/* linha com estrelas + h2 */
+.material-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;                                                    /* 12px */
+    margin-bottom: .5rem;                                           /* 8px */
+}
+
+.star-icon {
+    display: block;
+    width: 1.25rem;                                                 /* 20px */
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+/* título */
+#material-title h2 {
+    font-family: var(--ff-base);
+    font-weight: 700;
+    font-size: 1.5rem;                                              /* 24px */
+    color: var(--text-title);
+}
+
+/* subtítulo */
+#material-title p {
+    font-family: var(--ff-base);
+    font-weight: 400;
+    font-size: .875rem;                                             /* 14px */
+    color: var(--text-title);
+}
+
+/* ====  MEDIA QUERIES  ==== */
+@media (min-width: 1200px) {
+    #material {
+        max-width: 90rem;                                          /* 1440px */
+        min-height: 99.125rem;                                     /* 1586px */
+    }
+
+    #material-title {
+        max-width: 32.25rem;                                        /* 516px */
+
+        & h2 {
+            font-size: 2rem;                                        /* 32px */
+        }
+
+        & p {
+            font-size: 1rem;                                        /* 16px */
+        }
+
+        & .star-icon {
+            width: 2rem;                                            /* 32px */
+            height: 2rem;                                           /* 32px */
+        }
+    }
+}
