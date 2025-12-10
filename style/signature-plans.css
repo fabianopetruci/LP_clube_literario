@@ -1,0 +1,207 @@
+#signature-plans {
+    padding-block: 6.5rem;                                          /* 104px top e bottom */
+}
+
+/* Container desta seção: 52px de cada lado */
+#signature-plans .container {
+    padding-inline: 3.25rem;                                        /* 52px */
+}
+
+/* Título da seção */
+#signature-plans .signature-header {
+    text-align: center;
+    margin-bottom: 3rem;                                            /* 48px até o topo do card */
+}
+
+#signature-plans .signature-header h2 {
+    margin: 0;
+    font-family: var(--ff-base);
+    font-size: 1.5rem;                                                /* 24px */
+    font-weight: 700;
+    color: var(--text-title, #f9fafb);
+}
+
+/* Wrapper dos cards – carrossel horizontal no mobile */
+#signature-plans .plans-wrapper {
+    display: flex;
+    gap: 1rem;                                                      /* 16px entre cards */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Cada cartão de plano */
+#signature-plans .plan-card {
+    flex: 0 0 17rem;                                                /* 272px */
+    min-height: 25rem;                                              /* 400px */
+    padding: 2rem 1.5rem 2.5rem;                                    /* 32 | 24 | 40 */
+    border-radius: 1.5rem;                                          /* 24px */
+    background: var(--shape-base);
+    border: 2px solid var(--shape-stroke);
+    scroll-snap-align: start;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Bloco de preço (título + preços) */
+#signature-plans .plan-price {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;                                          /* 24px */
+}
+
+/* Nome do plano – “Mensal”, “Semestral”, “Anual” */
+#signature-plans .plan-price h3 {
+    margin: 0;
+    font-family: var(--ff-base);
+    font-size: 1rem;                                                /* 16px */
+    font-weight: 700;
+    color: var(--blue-light);
+}
+
+/* Linha do preço principal */
+#signature-plans .plan-main-price {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.25rem;
+    font-weight: 700;
+}
+
+#signature-plans .plan-main-price .currency {
+    font-family: var(--ff-base);
+    font-size: 2.5rem;                                              /* 40px */
+    color: var(--text-title);
+    line-height: 1;
+    transform: translateY(-2px);
+}
+
+/* amount + amout pra cobrir o typo do HTML */
+#signature-plans .plan-main-price .amount,
+#signature-plans .plan-main-price .amout {
+    font-family: var(--ff-base);
+    font-size: 2.5rem;                                              /* 40px */
+    color: var(--text-title);
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+
+#signature-plans .plan-main-price .period {
+    font-family: var(--ff-base);
+    font-size: 1rem;                                                /* 16px */
+    line-height: 1.3;
+    color: var(--text-title);
+}
+
+/* Preço secundário */
+#signature-plans .plan-subprice {
+    font-family: var(--ff-base);
+    font-size: 0.875rem;                                            /* 14px */
+    line-height: 1.4;
+    color: var(--text-label);
+}
+
+/* Lista de benefícios */
+#signature-plans .plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;                                             /* 24px até o botão */
+    margin-top: auto;                                               /* alinha a UL pela parte de baixo */
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;                                                   /* 12px entre os <li> */
+    font-family: var(--ff-base);
+    font-size: 0.75rem;                                             /* 12px */
+    color: var(--text-body);
+}
+
+#signature-plans .plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;                                                   /* 12px entre ícone e texto */
+}
+
+#signature-plans .plan-features li img {
+    width: 0.875rem;                                                /* 14px */
+    height: 0.875rem;
+    flex-shrink: 0;
+}
+
+#signature-plans .plan-cta {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 0.5rem;      /* 8px */
+    font-size: 0.875rem;        /* 14px */
+    font-weight: 700;
+    color: var(--text-title);
+    cursor: pointer;
+
+    height: 2.5rem;             /* 40px */
+}
+
+/* Efeito circular */
+#signature-plans .plan-cta::before {
+    content: "";
+    position: absolute;
+
+    width: 200%;
+    height: 200%;
+    top: 50%;
+    left: 50%;
+
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center;
+    transition: transform 0.4s ease-out;
+
+    z-index: -1;
+}
+
+/* Hover ativa o efeito */
+#signature-plans .plan-cta:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* =====================================================
+   CORES — botão padrão (mensal e anual)
+   ===================================================== */
+#signature-plans .plan-cta {
+    background: var(--blue-dark);
+}
+#signature-plans .plan-cta::before {
+    background: var(--blue-base);
+}
+
+/* =====================================================
+   CORES — botão do plano semestral
+   ===================================================== */
+#signature-plans .plan-card.plan--semestral .plan-cta {
+    background: var(--pink-dark);
+}
+#signature-plans .plan-card.plan--semestral .plan-cta::before {
+    background: var(--pink-base);
+}
+
+/* =====================================
+   VARIAÇÃO DE COR – PLANO SEMESTRAL
+   ===================================== */
+
+#signature-plans .plan-card.plan--semestral {
+    background: var(--shape-highlight, #07192f);       /* levemente diferente, se quiser */
+}
+
+#signature-plans .plan-card.plan--semestral .plan-price h3 {
+    color: var(--pink-light);                           /* título "Semestral" em rosa/lilás */
+}
+
+#signature-plans .plan-card.plan--semestral .plan-cta {
+    background: var(--pink-dark);                      /* botão rosa/lilás */
+}

@@ -27,7 +27,7 @@
     /* -- fontes  -- */
     --ff-base: "Raleway", sans-serif;
     --title-lg: 700 3rem var(--ff-base);
-    --title-md: 700 2.5rem/ var(--ff-base);
+    --title-md: 700 2.5rem var(--ff-base);
     --title-sm: 700 2rem var(--ff-base);
     --title-xs: 700 1rem var(--ff-base);
     --subtitle: 500 2rem/2 var(--ff-base);
