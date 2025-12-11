@@ -164,7 +164,9 @@
 }
 
 
-/* ========= ANIMAÇÕES ========= */
+/* =========================================================
+   ANIMAÇÕES — HOVER RESTRITO APENAS AO .kit-visual
+========================================================= */
 
 /* marca-páginas amarelo */
 #material .kit-bookmark-1 {
@@ -172,13 +174,11 @@
   transition: transform 0.6s ease-out;
 }
 
-/* estado inicial: dentro do livro, sem rotação */
-#material:not(:hover) .kit-bookmark-1 {
+#material:not(:has(.kit-visual:hover)) .kit-bookmark-1 {
   transform: translate(-40px, 20.64px) rotate(0deg);
 }
 
-/* estado com hover: posição final do layout (Figma) */
-#material:hover .kit-bookmark-1 {
+#material:has(.kit-visual:hover) .kit-bookmark-1 {
   transform: translate(0, 0) rotate(11.72deg);
 }
 
@@ -188,13 +188,11 @@
   transition: transform 0.6s ease-out;
 }
 
-/* estado inicial: dentro do livro, sem rotação */
-#material:not(:hover) .kit-bookmark-2 {
+#material:not(:has(.kit-visual:hover)) .kit-bookmark-2 {
   transform: translate(-75px, -5px) rotate(0deg);
 }
 
-/* estado com hover: posição final do layout (Figma) */
-#material:hover .kit-bookmark-2 {
+#material:has(.kit-visual:hover) .kit-bookmark-2 {
   transform: translate(0, 0) rotate(22.09deg);
 }
 
@@ -204,85 +202,62 @@
   transition: transform 0.6s ease-out;
 }
 
-/* estado inicial: dentro do livro, sem rotação */
-#material:not(:hover) .kit-badge {
+#material:not(:has(.kit-visual:hover)) .kit-badge {
   transform: translate(50px, -33.77px) rotate(0deg);
 }
 
-/* estado com hover: posição final do layout (Figma) */
-#material:hover .kit-badge {
+#material:has(.kit-visual:hover) .kit-badge {
   transform: translate(0, 0) rotate(-15deg);
 }
 
-/* Estado inicial — dentro do livro (labels) */
-#material .material-label--top-left {
-    transform: translate(100px, 40px);
-    transition: transform 0.6s ease-out;
-}
-
-#material .material-label--mid-left {
-    transform: translate(100px, 80px);
-    transition: transform 0.6s ease-out;
-}
-
+/* LABELS */
+#material .material-label--top-left,
+#material .material-label--mid-left,
 #material .material-label--bottom-center {
-    transform: translate(-80px, -60px);
-    transition: transform 0.6s ease-out;
+  transition: transform 0.6s ease-out;
 }
 
-/* Estado final — posição original do layout (mesmo gatilho das imagens) */
-#material:hover .material-label--top-left,
-#material:hover .material-label--mid-left,
-#material:hover .material-label--bottom-center {
+#material:not(:has(.kit-visual:hover)) .material-label--top-left {
+    transform: translate(100px, 40px);
+}
+#material:not(:has(.kit-visual:hover)) .material-label--mid-left {
+    transform: translate(100px, 80px);
+}
+#material:not(:has(.kit-visual:hover)) .material-label--bottom-center {
+    transform: translate(-80px, -60px);
+}
+
+#material:has(.kit-visual:hover) .material-label--top-left,
+#material:has(.kit-visual:hover) .material-label--mid-left,
+#material:has(.kit-visual:hover) .material-label--bottom-center {
     transform: translate(0, 0);
 }
 
 /* seta 1 */
-#material .kit-arrow-1 {
-  transition: transform 0.6s ease-out;
-}
-
-/* estado inicial — escondida um pouco para dentro do livro */
-#material:not(:hover) .kit-arrow-1 {
-  transform: translate(70px, 40px);
-}
-
-/* estado final — posição original do Figma */
-#material:hover .kit-arrow-1 {
-  transform: translate(0, 0);
-}
-
-/* seta 2 */
-#material .kit-arrow-2 {
-  transition: transform 0.6s ease-out;
-}
-
-/* estado inicial — mais escondida, já que fica mais para baixo */
-#material:not(:hover) .kit-arrow-2 {
-  transform: translate(80px, 20px);
-}
-
-/* estado final */
-#material:hover .kit-arrow-2 {
-  transform: translate(0, 0);
-}
-
-/* seta 3 */
+#material .kit-arrow-1,
+#material .kit-arrow-2,
 #material .kit-arrow-3 {
   transition: transform 0.6s ease-out;
 }
 
-/* estado inicial — deslocada para dentro do livro, lado direito */
-#material:not(:hover) .kit-arrow-3 {
+#material:not(:has(.kit-visual:hover)) .kit-arrow-1 {
+  transform: translate(70px, 40px);
+}
+#material:not(:has(.kit-visual:hover)) .kit-arrow-2 {
+  transform: translate(80px, 20px);
+}
+#material:not(:has(.kit-visual:hover)) .kit-arrow-3 {
   transform: translate(-80px, -50px);
 }
 
-/* estado final */
-#material:hover .kit-arrow-3 {
+#material:has(.kit-visual:hover) .kit-arrow-1,
+#material:has(.kit-visual:hover) .kit-arrow-2,
+#material:has(.kit-visual:hover) .kit-arrow-3 {
   transform: translate(0, 0);
 }
 
-/* ====  MEDIA QUERIES  ==== */
+
+/* ===== MEDIA QUERIES ===== */
 @media (min-width: 1200px) {
     #material {
         max-width: 90rem;                                          /* 1440px */
@@ -291,28 +266,28 @@
 
     #material-title {
         max-width: 32.25rem;                                        /* 516px */
+    }
 
-        & h2 {
-            font-size: 2rem;                                        /* 32px */
-        }
+    #material-title h2 {
+        font-size: 2rem;
+    }
 
-        & p {
-            font-size: 1rem;                                        /* 16px */
-        }
+    #material-title p {
+        font-size: 1rem;
+    }
 
-        & .star-icon {
-            width: 2rem;                                            /* 32px */
-            height: 2rem;                                           /* 32px */
-        }
+    #material-title .star-icon {
+        width: 2rem;
+        height: 2rem;
     }
 
     #material-content {
-        max-width: 90rem;                                           /* 1440px */
-        min-height: 57.5rem;                                        /* 920px */
+        max-width: 90rem;
+        min-height: 57.5rem;
     }
 
     .material-label {
-        font-size: 1rem;                                            /* 16px */
+        font-size: 1rem;
     }
 
     .material-label--top-left {
@@ -386,45 +361,44 @@
         z-index: 1;
     }
 
-    /* cursor de interação no desktop */
     .kit-visual {
         cursor: pointer;
     }
 
-    /* ajustes de offset inicial no desktop */
-    #material:not(:hover) .kit-bookmark-1 {
+    /* offsets iniciais desktop */
+    #material:not(:has(.kit-visual:hover)) .kit-bookmark-1 {
         transform: translate(-110px, 60px) rotate(0deg);
     }
 
-    #material:not(:hover) .kit-bookmark-2 {
+    #material:not(:has(.kit-visual:hover)) .kit-bookmark-2 {
         transform: translate(-220px, -5px) rotate(0deg);
     }
 
-    #material:not(:hover) .kit-badge {
+    #material:not(:has(.kit-visual:hover)) .kit-badge {
         transform: translate(160px, -70px) rotate(0deg);
     }
 
-    #material .material-label--top-left {
+    #material:not(:has(.kit-visual:hover)) .material-label--top-left {
         transform: translate(270px, 90px);
     }
 
-    #material .material-label--mid-left {
+    #material:not(:has(.kit-visual:hover)) .material-label--mid-left {
         transform: translate(280px, 230px);
     }
 
-    #material .material-label--bottom-center {
+    #material:not(:has(.kit-visual:hover)) .material-label--bottom-center {
         transform: translate(-160px, -180px);
     }
 
-    #material:not(:hover) .kit-arrow-1 {
+    #material:not(:has(.kit-visual:hover)) .kit-arrow-1 {
         transform: translate(190px, 40px);
     }
 
-    #material:not(:hover) .kit-arrow-2 {
+    #material:not(:has(.kit-visual:hover)) .kit-arrow-2 {
         transform: translate(240px, 20px);
     }
 
-    #material:not(:hover) .kit-arrow-3 {
+    #material:not(:has(.kit-visual:hover)) .kit-arrow-3 {
         transform: translate(-190px, -150px);
     }
 }

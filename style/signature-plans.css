@@ -1,8 +1,12 @@
+/* =====================================
+   SIGNATURE PLANS – MOBILE FIRST
+===================================== */
+
 #signature-plans {
-    padding-block: 6.5rem;                                          /* 104px top e bottom */
+    padding-block: 6.5rem;                                          /* 104px */
 }
 
-/* Container desta seção: 52px de cada lado */
+/* Container desta seção: 52px de cada lado no mobile */
 #signature-plans .container {
     padding-inline: 3.25rem;                                        /* 52px */
 }
@@ -10,13 +14,13 @@
 /* Título da seção */
 #signature-plans .signature-header {
     text-align: center;
-    margin-bottom: 3rem;                                            /* 48px até o topo do card */
+    margin-bottom: 3rem;                                            /* 48px */
 }
 
 #signature-plans .signature-header h2 {
     margin: 0;
     font-family: var(--ff-base);
-    font-size: 1.5rem;                                                /* 24px */
+    font-size: 1.5rem;                                              /* 24px */
     font-weight: 700;
     color: var(--text-title, #f9fafb);
 }
@@ -24,13 +28,13 @@
 /* Wrapper dos cards – carrossel horizontal no mobile */
 #signature-plans .plans-wrapper {
     display: flex;
-    gap: 1rem;                                                      /* 16px entre cards */
+    gap: 1rem;                                                      /* 16px */
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
 }
 
-/* Cada cartão de plano */
+/* Cada cartão de plano (MOBILE) */
 #signature-plans .plan-card {
     flex: 0 0 17rem;                                                /* 272px */
     min-height: 25rem;                                              /* 400px */
@@ -106,11 +110,11 @@
 #signature-plans .plan-features {
     list-style: none;
     padding: 0;
-    margin: 0 0 1.5rem;                                             /* 24px até o botão */
-    margin-top: auto;                                               /* alinha a UL pela parte de baixo */
+    margin: 0 0 1.5rem;                                             /* 24px */
+    margin-top: auto;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;                                                   /* 12px entre os <li> */
+    gap: 0.75rem;                                                   /* 12px */
     font-family: var(--ff-base);
     font-size: 0.75rem;                                             /* 12px */
     color: var(--text-body);
@@ -119,7 +123,7 @@
 #signature-plans .plan-features li {
     display: flex;
     align-items: center;
-    gap: 0.75rem;                                                   /* 12px entre ícone e texto */
+    gap: 0.75rem;                                                   /* 12px */
 }
 
 #signature-plans .plan-features li img {
@@ -128,6 +132,7 @@
     flex-shrink: 0;
 }
 
+/* Botão CTA com efeito do hero */
 #signature-plans .plan-cta {
     position: relative;
     overflow: hidden;
@@ -138,13 +143,13 @@
     justify-content: center;
 
     border: none;
-    border-radius: 0.5rem;      /* 8px */
-    font-size: 0.875rem;        /* 14px */
+    border-radius: 0.5rem;                                          /* 8px */
+    font-size: 0.875rem;                                            /* 14px */
     font-weight: 700;
     color: var(--text-title);
     cursor: pointer;
 
-    height: 2.5rem;             /* 40px */
+    height: 2.5rem;                                                 /* 40px */
 }
 
 /* Efeito circular */
@@ -170,9 +175,7 @@
     transform: translate(-50%, -50%) scale(1);
 }
 
-/* =====================================================
-   CORES — botão padrão (mensal e anual)
-   ===================================================== */
+/* CORES — botão padrão (mensal e anual) */
 #signature-plans .plan-cta {
     background: var(--blue-dark);
 }
@@ -180,9 +183,15 @@
     background: var(--blue-base);
 }
 
-/* =====================================================
-   CORES — botão do plano semestral
-   ===================================================== */
+/* VARIAÇÃO DE COR – PLANO SEMESTRAL */
+#signature-plans .plan-card.plan--semestral {
+    background: var(--shape-highlight, #07192f);
+}
+
+#signature-plans .plan-card.plan--semestral .plan-price h3 {
+    color: var(--pink-light);
+}
+
 #signature-plans .plan-card.plan--semestral .plan-cta {
     background: var(--pink-dark);
 }
@@ -190,18 +199,102 @@
     background: var(--pink-base);
 }
 
-/* =====================================
-   VARIAÇÃO DE COR – PLANO SEMESTRAL
-   ===================================== */
 
-#signature-plans .plan-card.plan--semestral {
-    background: var(--shape-highlight, #07192f);       /* levemente diferente, se quiser */
-}
+/* ==================================================
+   DESKTOP — LEQUE DE CARDS (apenas >= 1200px)
+================================================== */
+@media (min-width: 1200px) {
 
-#signature-plans .plan-card.plan--semestral .plan-price h3 {
-    color: var(--pink-light);                           /* título "Semestral" em rosa/lilás */
-}
+  /* Seção no desktop: largura e altura */
+  #signature-plans {
+    max-width: 90rem;                         /* 1440px */
+    min-height: 77.125rem;                    /* 1234px */
+    margin-inline: auto;
+    padding-block: 0;                          /* zera padding mobile */
+  }
 
-#signature-plans .plan-card.plan--semestral .plan-cta {
-    background: var(--pink-dark);                      /* botão rosa/lilás */
+  /* título: 194px do topo, 138px até os cards */
+  #signature-plans .signature-header {
+    margin-top: 12.125rem;                    /* 194px / 16 */
+    margin-bottom: 8.625rem;                  /* 138px / 16 */
+  }
+
+  #signature-plans .signature-header h2 {
+    font-size: 2rem;
+  }
+
+  /* container alinhado ao centro sem padding lateral extra */
+  #signature-plans .container {
+    padding-inline: 0;
+    max-width: 72rem;
+    margin-inline: auto;
+  }
+
+  /* wrapper dos cards no desktop (sem carrossel) */
+  #signature-plans .plans-wrapper {
+    justify-content: center;
+    overflow: visible;              /* sem rolagem no desktop */
+    gap: 2rem;
+    position: relative;
+    scroll-snap-type: none;
+  }
+
+  /* cards um pouco maiores + transição */
+  #signature-plans .plan-card {
+    flex: 0 0 18.5rem;
+    min-height: 25rem;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+  }
+
+  /* ===============================
+     CARDS ANIMAÇÃO — ESTADO INICIAL
+     =============================== */
+
+  /* Card ESQUERDA (Mensal) */
+  #signature-plans .plan-card:nth-child(1) {
+    transform: translateX(20rem) scale(0.85);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Card CENTRAL (Semestral) */
+  #signature-plans .plan-card:nth-child(2) {
+    transform: scale(1);
+    z-index: 3;
+    pointer-events: auto;
+  }
+
+  /* Card DIREITA (Anual) */
+  #signature-plans .plan-card:nth-child(3) {
+    transform: translateX(-20rem) scale(0.85);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* ===============================
+     HOVER DISPARADO APENAS PELO CENTRAL
+     =============================== */
+
+  /* Mensal abre para a esquerda */
+  #signature-plans .plans-wrapper:has(.plan-card:nth-child(2):hover)
+    .plan-card:nth-child(1) {
+    transform: translateX(-0.8rem) translateY(1.2rem) rotate(-10deg) scale(1);
+    z-index: 2;
+    pointer-events: auto;
+  }
+
+  /* Central destaca */
+  #signature-plans .plans-wrapper:has(.plan-card:nth-child(2):hover)
+    .plan-card:nth-child(2) {
+    transform: scale(1.05);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  }
+
+  /* Anual abre para a direita */
+  #signature-plans .plans-wrapper:has(.plan-card:nth-child(2):hover)
+    .plan-card:nth-child(3) {
+    transform: translateX(0.8rem) translateY(1.2rem) rotate(10deg) scale(1);
+    z-index: 2;
+    pointer-events: auto;
+  }
 }
