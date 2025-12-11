@@ -17,7 +17,7 @@
 <br>
 
 <p align="center">
-  <img alt="capa do projeto" src="../assets/capa.png" width="100%">
+  <img alt="capa do projeto" src="./assets/capa.png" width="100%">
 </p>
 
 ---
